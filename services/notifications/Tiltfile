@@ -1,0 +1,4 @@
+# -*- mode: Python -*-
+
+k8s_yaml('kubernetes.yaml')
+k8s_resource('notifications-service', port_forwards=[1025])
