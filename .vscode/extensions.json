@@ -1,0 +1,6 @@
+{
+    "recommendations": [
+        "tilt-dev.tiltfile",
+        "redhat.java"
+    ]
+}

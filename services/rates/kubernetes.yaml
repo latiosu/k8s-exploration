@@ -6,12 +6,19 @@ spec:
   replicas: 1
   strategy:
     type: RollingUpdate
+  selector:
+    matchLabels:
+      app: rates-service
   template:
+    metadata:
+      labels:
+        app: rates-service
     spec:
       containers:
-        - name: rates-service-container
-          image: rates-service-image:latest
-          terminationMessagePolicy: FallbackToLogsOnError
+        - name: rates-service
+          image: rates-service-image
+          ports:
+          - containerPort: 8000
           env:
             - name: WISE_API_TOKEN
               valueFrom:
