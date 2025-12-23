@@ -1,4 +1,4 @@
-package com.test.rate;
+package com.wiseservice.rate;
 
 import java.util.Arrays;
 

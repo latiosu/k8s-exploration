@@ -1,4 +1,4 @@
-package com.test.rate;
+package com.wiseservice.rate;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
