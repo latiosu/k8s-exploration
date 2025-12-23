@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.notifications.proto";
+option java_outer_classname = "NotificationProto";
+
+// The greeting service definition.
+service Notification {
+  // Sends a notification
+  rpc Notify(NotifyRequest) returns (NotifyResponse) {}
+}
+
+// The request message containing the user's email.
+message NotifyRequest {
+  string email = 1;
+}
+
+// The response message containing the email status
+message NotifyResponse {
+  string message = 1;
+}
