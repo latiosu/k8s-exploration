@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rates-service
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+  template:
+    spec:
+      containers:
+        - name: rates-service-container
+          image: rates-service-image:latest
+          terminationMessagePolicy: FallbackToLogsOnError
+          env:
+            - name: WISE_API_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: wise-credentials
+                  key: token
